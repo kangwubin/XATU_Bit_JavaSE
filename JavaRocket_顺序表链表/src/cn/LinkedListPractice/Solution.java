@@ -43,7 +43,7 @@ public class Solution {
     }
 
     //3.给定一个带有头结点head的非空单链表，返回链表的中间结点。如果有两个中间结点，则返回第二个中间结点。
-    public ListNode middleNode(ListNode head) {
+    public ListNode middleNode1(ListNode head) {
         int length = size(head);
         int offset = length / 2;
         ListNode cur = head;
@@ -53,7 +53,7 @@ public class Solution {
         return cur;
     }
 
-    public ListNode middleNode1(ListNode head) {
+    public ListNode middleNode(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;
         while (fast != null && fast.next != null) {
