@@ -1,12 +1,15 @@
 package operation;
 
+import book.Book;
 import book.BookList;
 
 /**
- * Description:
+ * Description:查找书籍：通过遍历整个bookList，然后根据书名进行查找，如果有这本书，就拿到这本书的下标，
+ * 如果找不到就表示没有这本书。
  *
  * @author: KangWuBin
- * @Date: 2019/11/3 18:26
+ * @Date: 2019/11/3
+ * @Time: 18:26
  */
 public class FindOperation implements IOperation {
     @Override
@@ -16,15 +19,20 @@ public class FindOperation implements IOperation {
         System.out.println("请输入要查找的书名:");
         String name = scanner.next();
         //2、根据书籍的名称查找书籍是否存在   index
-        int i = 0;
-        for (; i < bookList.getUsedSize(); i++) {
-            if (bookList.getBook(i).getName().equals(name)) {
-                System.out.println(bookList.getBook(i));
+        int count = 0;
+        for (int i = 0; i < bookList.getUsedSize(); i++) {
+            Book book = bookList.getBook(i);
+            if (book.getName().equals(name)) {
+                // 打印这本书的信息
+                System.out.println(book);
+                count++;
             }
         }
-        if (i > bookList.getUsedSize()){
-            System.out.println("对不起，没有此书！");
+        if (count == 0) {
+            System.out.println("没有找到这本书！");
+            System.out.println("查找完毕！");
+        } else {
+            System.out.println("共计找到 " + count + " 本书!");
         }
-        System.out.println("查找完毕！");
     }
 }

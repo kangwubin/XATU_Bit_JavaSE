@@ -4,7 +4,8 @@ package book;
  * Description:
  *
  * @author: KangWuBin
- * @Date: 2019/11/3 18:12
+ * @Date: 2019/11/3
+ * @Time: 18:12
  */
 public class BookList {
     private Book[] books = new Book[100];
