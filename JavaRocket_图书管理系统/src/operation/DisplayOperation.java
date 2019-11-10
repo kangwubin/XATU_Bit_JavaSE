@@ -3,10 +3,11 @@ package operation;
 import book.BookList;
 
 /**
- * Description:
+ * Description:遍历输出所有书籍就可以了。
  *
  * @author: KangWuBin
- * @Date: 2019/11/3 18:26
+ * @Date: 2019/11/3
+ * @Time: 18:26
  */
 public class DisplayOperation implements IOperation {
     @Override

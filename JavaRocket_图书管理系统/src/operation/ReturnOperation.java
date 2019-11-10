@@ -4,10 +4,11 @@ import book.Book;
 import book.BookList;
 
 /**
- * Description:
+ * Description:归还图书，首先遍历整个bookList,看有没有这本书，如果有此书，再看有没有被借出去
  *
  * @author: KangWuBin
- * @Date: 2019/11/3 18:26
+ * @Date: 2019/11/3
+ * @Time: 18:26
  */
 public class ReturnOperation implements IOperation {
     @Override
@@ -27,7 +28,17 @@ public class ReturnOperation implements IOperation {
             System.out.println("没有此书籍");
             return;
         }
-
-
+        /**
+         * 1、找到了这本书，但是这本书根本没有被借出去过
+         * 2、找到了这本书，这本书确实已经被借出去了
+         */
+        if (book != null && !book.isBorrowed()) {
+            System.out.println("您没有借阅此书！");
+            return;
+        }
+        if (book != null && book.isBorrowed()) {
+            book.setBorrowed(false);
+        }
+        System.out.println("还书完成！");
     }
 }

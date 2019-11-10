@@ -4,7 +4,8 @@ package book;
  * Description:
  *
  * @author: KangWuBin
- * @Date: 2019/11/3 18:12
+ * @Date: 2019/11/3
+ * @Time: 18:12
  */
 public class Book {
     private String name;//书籍名称
@@ -59,7 +60,7 @@ public class Book {
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", price=" + price +
-                ", type='" + type + '\'' +
+                ", type='" + type + '\'' + ", " +
                 (isBorrowed == true ? "已经被借出" : "没有被借出") +
                 '}';
     }

@@ -4,10 +4,12 @@ import book.Book;
 import book.BookList;
 
 /**
- * Description:
+ * Description:借书操作：首先需要遍历查找看有没有这本书，如果有，就可以借，借完之后将setBorrowed设置为已借出，
+ * 如果有此书，并且此书已经被借出去，则也是无法借阅；如果没有这本书，就提示没有此书，无法借阅！
  *
  * @author: KangWuBin
- * @Date: 2019/11/3 18:25
+ * @Date: 2019/11/3
+ * @Time: 18:25
  */
 public class BorrowOperation implements IOperation {
     @Override
