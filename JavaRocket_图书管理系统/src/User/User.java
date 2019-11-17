@@ -4,7 +4,7 @@ import book.BookList;
 import operation.IOperation;
 
 /**
- * Description:
+ * Description:将user设置为抽象类
  *
  * @author: KangWuBin
  * @Date: 2019/11/3

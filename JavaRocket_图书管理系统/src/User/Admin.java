@@ -5,7 +5,7 @@ import operation.*;
 import java.util.Scanner;
 
 /**
- * Description:
+ * Description:多态：一个引用多种表现形式
  *
  * @author: KangWuBin
  * @Date: 2019/11/3

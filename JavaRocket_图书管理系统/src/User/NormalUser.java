@@ -5,7 +5,7 @@ import operation.*;
 import java.util.Scanner;
 
 /**
- * Description:
+ * Description:多态的体现
  *
  * @author: KangWuBin
  * @Date: 2019/11/3

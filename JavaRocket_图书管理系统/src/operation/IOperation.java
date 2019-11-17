@@ -5,7 +5,7 @@ import book.BookList;
 import java.util.Scanner;
 
 /**
- * Description:
+ * Description:接口：用来提供对书的操作。
  *
  * @author: KangWuBin
  * @Date: 2019/11/3
@@ -13,5 +13,6 @@ import java.util.Scanner;
  */
 public interface IOperation {
     Scanner scanner = new Scanner(System.in);
+
     void work(BookList bookList);
 }
