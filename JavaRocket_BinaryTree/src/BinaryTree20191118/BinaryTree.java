@@ -45,7 +45,8 @@ public class BinaryTree {
             return;
         }
         System.out.print(root.value + " ");
-        preOrderTraversal(root.left);//需要理解每一次传入的root是哪个
+        //需要理解每一次传入的root是哪个
+        preOrderTraversal(root.left);
         preOrderTraversal(root.right);
     }
 
