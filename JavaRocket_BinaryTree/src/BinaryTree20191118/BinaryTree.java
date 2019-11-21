@@ -240,7 +240,7 @@ public class BinaryTree {
         }
     }
 
-    // 判断一棵树是不是完全二叉树(重点)
+    // 判断一棵树是不是完全二叉树(重点+++)
     //核心思路：借助队列(队列先进先出)列来完成，使用层序遍历的方式.
     boolean isCompleteTree(Node root) {
         Queue<Node> queue = new LinkedList<>();
@@ -260,7 +260,8 @@ public class BinaryTree {
             }
         }
         //4.遍历队列中的元素，进行判断；
-        // 完全二叉树在出队的时候是按层序遍历的顺出的，当遇到出队的元素不为空的时候，肯定不是二叉树.
+        // 完全二叉树--cur在出队的时候若遇到null，即把二叉树遍历完了，就认为是完全二叉树；
+        // 如果在cur遇到null之后，而null之后还有其他元素，就不是二叉树.
         while (!queue.isEmpty()) {
             Node cur = queue.poll();
             if (cur != null) {

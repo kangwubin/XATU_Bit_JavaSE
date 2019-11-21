@@ -36,8 +36,8 @@ public class Solution {
         }
         //队列的元素就是一层数据
         while (!queue.isEmpty()) {
-            //queue.size()，通过计算队列的大小，就可以知道队列当中有没有元素
-            int count = queue.size();
+            //queue.size()，通过计算当前队列的大小，就可以知道队列当中有没有元素
+            int count = queue.size();// 1->2
             //存放的是一层数据
             List<Integer> list = new ArrayList<>();
             while (count > 0) {

@@ -28,10 +28,14 @@ class Node {
  *每个字符后面都有一个空格。每个输出结果占一行。
  *输入：abc##de#g##f###；输出：c b e g d f a */
 public class Main {
-    public static int i = 0;//i是个坑
+    public static int i = 0;//i是个坑,表示全局变量
 
     public static Node buildTree(String str) {
         Node root = null;
+        //1.判断当前下标是否是 # ；不是 # 就 root = new Node(A);
+        //i++
+        //2.递归遍历左树
+        //3.递归遍历右树
         if (str.charAt(i) != '#') {
             root = new Node(str.charAt(i));
             i++;
