@@ -121,7 +121,7 @@ public class BinaryTree {
         }
         Stack<Node> stack = new Stack<>();
         Node cur = root;
-        Node flg = null;//flg标记的是打印的元素
+        Node flg = null;//flg标记的是打印过的元素
         while (cur != null || !stack.isEmpty()) {
             //节点不为空一直压栈
             while (cur != null) {
@@ -129,6 +129,8 @@ public class BinaryTree {
                 cur = cur.left;
             }
             //cur==null,cur需要拿到栈顶元素看是否有右子树
+            //if(cur.right != null)
+            //if(cur.right == null)
             cur = stack.peek();
             if (cur.right == null || cur.right == flg) {
                 System.out.print(cur.value + " ");
