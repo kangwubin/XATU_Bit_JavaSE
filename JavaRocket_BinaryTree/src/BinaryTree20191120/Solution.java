@@ -122,8 +122,9 @@ public class Solution {
     /*根据一棵树的前序遍历与中序遍历构造二叉树。(重点)
      *注意:你可以假设树中没有重复的元素。
      *例如，给出前序遍历 preorder = [3,9,20,15,7];中序遍历 inorder = [9,3,15,20,7]*/
-    public int preIndex = 0;
+    public int preIndex = 0;//先序遍历的0号下表的元素
 
+    //思路：1.先遍历前序；2.找到前序节点在中序当中的位置；3.一直去遍历前序.
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder.length == 0 || inorder.length == 0) {
             return null;
@@ -135,6 +136,7 @@ public class Solution {
         if (inbegin > inend) {
             return null;
         }
+        //preorder[preIndex]--先序遍历的preIndex下表设为根节点；
         TreeNode root = new TreeNode(preorder[preIndex]);
         //找到root在中序遍历数组当中的位置
         int rootIndex = findInorderIndex(inorder, inbegin, inend, preorder[preIndex]);
@@ -147,6 +149,7 @@ public class Solution {
         return root;
     }
 
+    //在中序遍历中，找根(root)在中序遍历中的位置
     public int findInorderIndex(int[] inorder, int inbegin, int inend, int val) {
         for (int i = inbegin; i <= inend; i++) {
             if (inorder[i] == val) {
