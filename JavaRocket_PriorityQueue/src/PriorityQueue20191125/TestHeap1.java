@@ -31,8 +31,7 @@ public class TestHeap1 {
         int child = 2 * parent + 1;
         while (child < len) {
             //判断是否有右孩子 且谁最大
-            if (child + 1 < len && elem[child] <
-                    elem[child + 1]) {
+            if (child + 1 < len && elem[child] < elem[child + 1]) {
                 child = child + 1;
             }
             //child肯定是左右孩子的最大值下标
@@ -153,7 +152,7 @@ public class TestHeap1 {
             int tmp = this.elem[0];
             this.elem[0] = this.elem[end];
             this.elem[end] = tmp;
-            //end->adjustDown->len  小于
+            //end在adjustDown中->len是小于
             adjustDown(0, end);
             end--;
         }
