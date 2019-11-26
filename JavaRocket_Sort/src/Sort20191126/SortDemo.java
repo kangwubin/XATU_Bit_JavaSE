@@ -63,8 +63,8 @@ public class SortDemo {
         }
     }
 
-    /*3.选择排序：每一次从无序区间选出最大（或最小）的一个元素，
-     *存放在无序区间的最后（或最前），直到全部待排序的数据元素排完。
+    /* 3.选择排序：每一次从无序区间选出最大（或最小）的一个元素，
+     * 存放在无序区间的最后（或最前），直到全部待排序的数据元素排完。
      * 时间复杂度为;O(n^2)；
      * 排序稳定性：不稳定；
      * */
@@ -80,7 +80,7 @@ public class SortDemo {
         }
     }
 
-    /*4.堆排序：基本原理也是选择排序，只是不在使用遍历的方式查找无序区间的最大的数，
+    /*4.堆排序(+++++)：基本原理也是选择排序，只是不在使用遍历的方式查找无序区间的最大的数，
      *而是通过堆来选择无序区间的最大的数；
      *注意：排升序要建大堆；排降序要建小堆；
      *时间复杂度：O(n * log(n))；
@@ -107,6 +107,7 @@ public class SortDemo {
 
     //堆排序
     public static void heapSort(int[] array) {
+        //创建堆
         for (int i = (array.length - 1 - 1) / 2; i >= 0; i--) {
             adjustDown(array, i, array.length);
         }
@@ -120,6 +121,25 @@ public class SortDemo {
         }
     }
 
+    /*5.冒泡排序(+++++)：在无序区间，通过相邻数的比较，
+     *将最大的数冒泡到无序区间的最后，持续这个过程，直到数组整体有序。
+     * */
+    public static void bubbleSort(int[] array) {
+        // [0, bound) 构成了一个前闭后开区间, 表示已排序区间
+        // [bound, length) 构成了一个前闭后开区间, 表示待排序区间
+        // 每循环一次, 就找到一个合适大小的元素, 已排序区间就增大1
+        for (int bound = 0; bound < array.length; bound++) {
+            //访问下标，每次访问下标前，让访问的当前下标大于bound
+            for (int cur = array.length - 1; cur > bound; cur--) {
+                //如果(cur - 1)下标的元素的值大于cur下标元素的值，就交换.
+                if (array[cur - 1] > array[cur]) {
+                    int tmp = array[cur - 1];
+                    array[cur - 1] = array[cur];
+                    array[cur] = tmp;
+                }
+            }
+        }
+    }
 
     public static void main(String[] args) {
         int[] array = {13, 8, 2, 7, 10};
@@ -131,5 +151,7 @@ public class SortDemo {
         System.out.println("选择排序：" + Arrays.toString(array));
         heapSort(array);
         System.out.println("堆排序：" + Arrays.toString(array));
+        bubbleSort(array);
+        System.out.println("冒泡排序：" + Arrays.toString(array));
     }
 }
