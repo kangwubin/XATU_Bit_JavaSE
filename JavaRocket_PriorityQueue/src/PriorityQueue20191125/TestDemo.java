@@ -35,6 +35,5 @@ public class TestDemo {
         testHeap1.display();
         int ret = testHeap1.getPop();
         System.out.println(ret);
-
     }
 }
