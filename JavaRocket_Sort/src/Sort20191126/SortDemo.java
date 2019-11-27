@@ -135,7 +135,6 @@ public class SortDemo {
         boolean flg = false;
         //i代表趟数
         for (int i = 0; i < array.length - 1; i++) {
-            flg = false;
             //j代表数组的下标,array.length - 1  每一趟比较4次；
             // array.length - 1 - i，每趟比较的次数在减少
             for (int j = 0; j < array.length - 1 - i; j++) {
