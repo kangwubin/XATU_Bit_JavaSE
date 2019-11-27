@@ -168,9 +168,20 @@ public class SortDemo {
                 high--;
             }
             array[low] = array[high];
+          /*  if (low >= high) {
+                break;
+            } else {
+                array[low] = array[high];
+            }*/
+
             while (low < high && array[low] <= tmp) {
                 low++;
             }
+            /*if (low >= high) {
+                break;
+            } else {
+                array[high] = array[low];
+            }*/
             array[high] = array[low];
         }
         array[low] = tmp;
@@ -186,7 +197,7 @@ public class SortDemo {
         //第一步优化：采用三数取中法对快排进行优化
         threeNumMid(array, low, high);
         int par = partition(array, low, high);
-        System.out.println("low:" + low + ";high:" + high);
+//        System.out.println("low:" + low + ";high:" + high);
         //1.左边有两个以上的数据
         if (par > low + 1) {
             quick(array, low, par - 1);
