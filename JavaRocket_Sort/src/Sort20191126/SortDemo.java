@@ -286,7 +286,7 @@ public class SortDemo {
         }
     }
 
-    /*6.2.非递归版的快排---思想：使用栈；*/
+    /*6.2.非递归版的快排(+++++)---思想：使用栈；*/
     public static void quickSort1(int[] array) {
         Stack<Integer> stack = new Stack<>();
         int low = 0;
