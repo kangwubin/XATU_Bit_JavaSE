@@ -38,9 +38,9 @@ class OuterClass2 {
             //问题：静态内部类能否访问外部类的实例成员，不能直接访问;
             //System.out.println("outdata1: "+ OuterClass2.this.data1);---error
             /*间接访问的步骤：
-             * 1. public InnerClass2(OuterClass2 out) {
-             *    this.o = out;}
-             * 2. public OuterClass2 o = null;
+             * 1.public InnerClass2(OuterClass2 out) {
+             *   this.o = out;}
+             * 2.public OuterClass2 o = null;
              * 3.OuterClass2 outerClass2 = new OuterClass2();
              *   OuterClass2.InnerClass2 innerClass2 = new OuterClass2.InnerClass2(outerClass2);
              * 4.System.out.println("out2-data1:" + o.data1);*/
