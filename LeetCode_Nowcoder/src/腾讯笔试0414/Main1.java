@@ -1,5 +1,7 @@
 package 腾讯笔试0414;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -45,7 +47,7 @@ public class Main1 {
             throw new IllegalArgumentException();
         } else if (a == b && b == c && a == c) {
             System.out.println("等边三角形边长为：" + a + " " + b + " " + c);
-        } else if ((a == b && b == c && a != c) || (a == b && a == c && b!=c) || (a!=b && b==c && c==a)) {
+        } else if ((a == b && b == c && a != c) || (a == b && a == c && b != c) || (a != b && b == c && c == a)) {
             System.out.println("等腰三角形边长为：" + a + " " + b + " " + c);
         } else {
             System.out.println("三角形边长为：" + a + " " + b + " " + c);
